@@ -8,6 +8,23 @@ html {
   block-size: 100%;
 }
 
+body {
+  scrollbar-width: thin;
+  scrollbar-color: gray black;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: gray; /* Цвет бегунка */
+}
+
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -35,4 +52,243 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  padding: 135px 30px;
+  margin: auto;
+}
+
+.result {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.result__video-container {
+  position: relative;
+  width: 710px;
+  height: 385px;
+  margin-bottom: 15px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+}
+
+.search-form__textfield {
+  min-width: 225px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  letter-spacing: 0;
+  line-height: auto;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: #fff;
+  opacity: 0.7;
+}
+
+.search-form {
+  display: flex;
+
+  justify-content: space-between;
+  gap: 40px;
+  min-height: 54px;
+}
+
+.search-form__fieldset {
+  border: 0;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+  margin-top: 5px;
+  align-items: center;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
+
+.search-form__textfield:focus, 
+.search-form__label:focus, 
+.button:focus,
+.content__card-link:focus {
+  outline: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__fieldset-title, .search-form__label-text {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.search-form__pseudo-checkbox:has(:focus-visible) {
+  outline: 1px solid #fff;
+}
+
+.button {
+  background: inherit;
+  cursor: pointer;
+  border: 1px solid #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #fff;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.search-form__submit-button {
+  width: 195px;
+  max-height: 34px;
+  margin-top: auto;
+}
+
+.more-button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 75px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__details {
+  width: 100%;
+  height: 100%;
+}
+
+.content__list {
+  position: relative;
+  max-height: 300px;
+  overflow-y: scroll;
+  margin-top: 25px;
+}
+
+.content__list-item {
+  margin-bottom: 30px;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+   margin:  2px 2px 0px; 
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__video-card {
+  display: grid;
+  grid-template-columns: 1fr 195px;
+  grid-template-rows: 1fr;
+  width: 398px;
+  height: 108px;
+  overflow:hidden
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  margin-top: 5px;
+  /* line-height: 16.2; */
+}
+
+.content__video-card-thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
